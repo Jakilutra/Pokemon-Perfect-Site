@@ -5,10 +5,10 @@ function get_details($dir) {
 	foreach ($config as $line) {
 		if ($details["name"] === "undefined" || $details["port"] === "undefined"){
 			if (substr_compare($line, "Name=", 0,5) == 0){
-				$details["name"] = utf8_encode(str_replace("\\xe9", "é", substr($line, 5)));
+				$details["name"] = utf8_encode(str_replace("\\xe9", "é", str_replace("\r\n", "", substr($line, 5))));
 			}
 			if (substr_compare($line, "Ports=", 0,6) == 0){
-				$details["port"] = substr($line, 6);
+				$details["port"] = str_replace("\r\n", "", substr($line, 6));
 			}
 		}
 		else {
@@ -16,11 +16,11 @@ function get_details($dir) {
 		}
 	}
 	if (!$socket = @fsockopen("127.0.0.1", $details["port"], $errno, $errstr, 30)){
-		$details["status"] = "<font color='red'><strong>Offline</strong></font>";
+		$details["status"] = "<div class='offline'>Offline</div>";
 	}
 	else {
 		fclose($socket);
-		$details["status"] = "<font color='green'><strong>Online</strong></font>";
+		$details["status"] = "<div class='online'>Online</div>";
 	}
 	return $details;
 }
@@ -43,13 +43,15 @@ $table = "\t\t<table>\n"
 . "\t\t\t</tr>\n";
 foreach ($all as $j){
 	$table .= "\t\t\t<tr>\n"
-	. "\t\t\t\t<td>{$j["name"]}</td><td><a href='http://po-devs.github.com/webclient/?server={$ip}%3A{$j["port"]}&autoconnect=true'>{$ip}:{$j["port"]}</a></td><td>{$j["status"]}</td>\n"
+	. "\t\t\t\t<td>{$j["name"]}</td><td><a href='http://po-devs.github.com/webclient/?server={$ip}%3A{$j["port"]}&amp;autoconnect=true'>{$ip}:{$j["port"]}</a></td><td>{$j["status"]}</td>\n"
 	. "\t\t\t</tr>\n";
 }
 $table .= "</table>\n";
 $display = "<!DOCTYPE html>\n"
 . "<html>\n"
 . "\t<head>\n"
+. "\t\t<meta charset='UTF-8'>\n"
+. "\t\t<link href='style.css' rel='stylesheet' type='text/css'>\n"
 . "\t\t<title> PAPOS Server List </title>\n"
 . "\t</head>\n"
 . "\t<body>\n"
