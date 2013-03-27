@@ -1,3 +1,61 @@
+body {
+	background-image:url('PPBackground.jpg');
+	font-family: helvetica;
+}
+img.banner {
+	width: 60%;
+	display: block;
+	border:1px solid gray;
+	margin-left:auto;
+	margin-right:auto;
+}
+div.nav {
+	background-image:url('PPBackground3.jpg');
+	width: 60%;
+	border:1px solid gray;
+	margin-left:auto; 
+	margin-right:auto;
+}
+div.nolink{
+	font-weight: bold;
+}
+div.content{
+	background-image:url('PPBackground2.jpg');
+	width: 58%;
+	padding:1% 1% 0.5%;
+	border:1px solid gray;
+   	margin-left:auto; 
+	margin-right:auto;
+}
+table {
+	margin-top: 30px;
+	margin-bottom:30px;
+   	margin-left:auto; 
+	margin-right:auto;
+	border-collapse:collapse;
+	border: 3px solid black;
+}
+th {
+	border: 2px solid black;
+}
+td {
+	padding:15px;
+	border: 1px solid black;
+}
+h1 {
+	margin-top:0px;
+	text-align: center;
+	font-size: 25px;
+}
+a:link, a:visited{
+	color:blue;
+}
+a:hover, a:active{
+	color:orangered;
+}
+a.external{
+	color:navy;
+}
 .online { 
 	color:green;
 	font-weight:bold;
@@ -6,3 +64,4 @@
 	color:red;
 	font-weight:bold;
 }
+	
