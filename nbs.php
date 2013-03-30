@@ -8,9 +8,7 @@ function get_status($ip, $port) {
 		return "<div class='online'>Online</div>";
 	}
 }
-$sitepage = "nbs";
-$title = "NBS Server List";
-$header = "Pok&eacute;mon NetBattle Supremacy (NBS)";
+$title = "Pok&eacute;mon NetBattle Supremacy (NBS)";
 $content = "\t\t\t<table>"
 . "\t\t\t\t<tr>\n"
 . "\t\t\t\t\t<th>Name</th><th>Status</th>\n"

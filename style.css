@@ -16,15 +16,18 @@ div.nav {
 	margin-left:auto; 
 	margin-right:auto;
 }
-div.nolink{
-	font-weight: bold;
-}
 div.content{
 	background-image:url('PPBackground2.jpg');
 	width: 58%;
 	padding:1% 1% 0.5%;
 	border:1px solid gray;
    	margin-left:auto; 
+	margin-right:auto;
+}
+div.footer{
+	width:58%;
+	padding:1% 1% 0.5%;
+	margin-left:auto; 
 	margin-right:auto;
 }
 table {
@@ -64,4 +67,6 @@ a.external{
 	color:red;
 	font-weight:bold;
 }
-	
+iframe {
+	border: none;
+}

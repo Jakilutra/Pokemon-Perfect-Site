@@ -47,9 +47,7 @@ foreach ($all as $j){
 	. "\t\t\t\t</tr>\n";
 }
 $table .= "\t\t\t</table>\n";
-$sitepage = "papos"; 
-$title = "PAPOS Server List";
-$header = "Perfect Alliance of Pokemon Online Servers (PAPOS)";
+$title = "Perfect Alliance of Pokemon Online Servers (PAPOS)";
 $content = "\t\t\t<p> PAPOS is a group of servers hosted by pokemonperfect.com. PAPOS has a skype group with 2 participants from each server, for a total of 6 members. The skype group was set up to maintain one place for discussing problems experienced with the pokemonperfect.com servers. It also doubles as a place to chat about anything with its members.</p>\n"
 . "\t\t\t<p> See below for details on PAPOS server names, their advance connections and online status. Clicking an advance connection link will connect you to the corresponding server via PO's in-development web client.</p>\n"
 . $table;
