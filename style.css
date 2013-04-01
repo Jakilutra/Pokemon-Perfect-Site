@@ -16,11 +16,24 @@ div.nav {
 	margin-left:auto; 
 	margin-right:auto;
 }
+div.subnav{
+	background-image:url('PPBackground2.jpg');
+	width: 60%;
+	padding: 0.5% 0%;
+	border-left:1px solid gray;
+	border-right:1px solid gray;
+	margin-left:auto; 
+	margin-right:auto;
+	font-size: 9pt;
+}
 div.content{
 	background-image:url('PPBackground2.jpg');
 	width: 58%;
-	padding:1% 1% 0.5%;
-	border:1px solid gray;
+	padding: 1% 1% 0.5%;
+	border-top: 0;
+	border-left:1px solid gray;
+	border-right:1px solid gray;
+	border-bottom: 1px solid gray;
    	margin-left:auto; 
 	margin-right:auto;
 }
@@ -52,12 +65,16 @@ h1 {
 }
 a:link, a:visited{
 	color:blue;
+	text-decoration:none;
+}
+a.external:link, a.external:visited{
+	color:navy;
 }
 a:hover, a:active{
 	color:orangered;
 }
-a.external{
-	color:navy;
+a.external:hover, a.external:active {
+	color:red;
 }
 .online { 
 	color:green;

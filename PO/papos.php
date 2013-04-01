@@ -27,11 +27,12 @@ function get_details($dir) {
 $ip = $_SERVER['SERVER_NAME'];
 $all = array();
 $i = 0;
-if ($handle = opendir(getcwd())) {
+$homedir = dirname(getcwd());
+if ($handle = opendir($homedir)) {
 	while (false !== ($entry = readdir($handle))) {
-		if (is_dir($entry)){
-			if (file_exists($entry."/config") && file_exists($entry."/server.exe")){
-				$all[$i++] = get_details($entry);
+		if (is_dir($homedir."/".$entry)){
+			if (file_exists($homedir."/".$entry."/config") && file_exists($homedir."/".$entry."/server.exe")){
+				$all[$i++] = get_details($homedir."/".$entry);
 			}
 		}
 	}
@@ -51,6 +52,6 @@ $title = "Perfect Alliance of Pokemon Online Servers (PAPOS)";
 $content = "\t\t\t<p> PAPOS is a group of servers hosted by pokemonperfect.com. PAPOS has a skype group with 2 participants from each server, for a total of 6 members. The skype group was set up to maintain one place for discussing problems experienced with the pokemonperfect.com servers. It also doubles as a place to chat about anything with its members.</p>\n"
 . "\t\t\t<p> See below for details on PAPOS server names, their advance connections and online status. Clicking an advance connection link will connect you to the corresponding server via PO's in-development web client.</p>\n"
 . $table;
-include "template.php";
+include "../template.php";
 echo $display;
 ?>

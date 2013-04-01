@@ -28,6 +28,6 @@ $content = "\t\t\t<table>"
 . "\t\t\t\t\t<td>The Dove Shack</td><td>registry.nbsup.com</td><td>" . get_status('registry.nbsup.com', 30000) . "</td>\n"
 . "\t\t\t\t</tr>\n"
 . "\t\t\t</table>\n";
-include "template.php";
+include "../template.php";
 echo $display;
 ?>
