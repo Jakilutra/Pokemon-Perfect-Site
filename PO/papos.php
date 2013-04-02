@@ -5,7 +5,7 @@ function get_details($dir) {
 	foreach ($config as $line) {
 		if ($details["name"] === "undefined" || $details["port"] === "undefined"){
 			if (substr_compare($line, "Name=", 0,5) == 0){
-				$details["name"] = utf8_encode(str_replace("\\xe9", "é", str_replace("\r\n", "", substr($line, 5))));
+				$details["name"] = str_replace("\\xe9", "&eacute;", str_replace("\r\n", "", substr($line, 5)));
 			}
 			if (substr_compare($line, "Ports=", 0,6) == 0){
 				$details["port"] = str_replace("\r\n", "", substr($line, 6));
@@ -44,7 +44,7 @@ $table = "\t\t\t<table>\n"
 . "\t\t\t\t</tr>\n";
 foreach ($all as $j){
 	$table .= "\t\t\t\t<tr>\n"
-	. "\t\t\t\t\t<td>{$j["name"]}</td><td><a class='external' href='http://po-devs.github.com/webclient/?server={$ip}%3A{$j["port"]}&amp;autoconnect=true'>{$ip}:{$j["port"]}</a></td><td>{$j["status"]}</td>\n"
+	. "\t\t\t\t\t<td>{$j["name"]}</td><td><a class='external' id='". str_replace("'", "&#39;", str_replace(" ", "_", $j["name"])) . "' href='http://po-devs.github.com/webclient/?server={$ip}%3A{$j["port"]}&amp;autoconnect=true'>{$ip}:{$j["port"]}</a></td><td>{$j["status"]}</td>\n"
 	. "\t\t\t\t</tr>\n";
 }
 $table .= "\t\t\t</table>\n";

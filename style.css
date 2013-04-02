@@ -11,15 +11,16 @@ img.banner {
 }
 div.nav {
 	background-image:url('PPBackground3.jpg');
-	width: 60%;
+	width: 59%;
+	padding: 0% 0.5% 0%;
 	border:1px solid gray;
 	margin-left:auto; 
 	margin-right:auto;
 }
 div.subnav{
 	background-image:url('PPBackground2.jpg');
-	width: 60%;
-	padding: 0.5% 0%;
+	width: 59%;
+	padding: 0.5% 0.5% 0%;
 	border-left:1px solid gray;
 	border-right:1px solid gray;
 	margin-left:auto; 
@@ -28,14 +29,34 @@ div.subnav{
 }
 div.content{
 	background-image:url('PPBackground2.jpg');
-	width: 58%;
-	padding: 1% 1% 0.5%;
-	border-top: 0;
+	width: 59%;
+	padding: 0.5% 0.5% 0%;
+	border-left:1px solid gray;
+	border-right:1px solid gray;
+	border-bottom: 2px solid gray;
+   	margin-left:auto; 
+	margin-right:auto;
+}
+div.linksummary{
+	background-image:url('PPBackground2.jpg');
+	width: 59%;
+	padding: 0.25% 0.5% 0.25%;
 	border-left:1px solid gray;
 	border-right:1px solid gray;
 	border-bottom: 1px solid gray;
-   	margin-left:auto; 
+	margin-left:auto;
 	margin-right:auto;
+}
+div.copyright{
+	background-image:url('PPBackground2.jpg');
+	width: 59%;
+	padding: 0.25% 0.5% 0.25%;
+	border-left:1px solid gray;
+	border-right:1px solid gray;
+	border-bottom: 1px solid gray;
+	margin-left:auto; 
+	margin-right:auto;
+	font-size: 9pt;
 }
 div.footer{
 	width:58%;

@@ -55,6 +55,32 @@
 		$subnavpath .=  " -> <b>{$title}</b>";
 	}
 	$subnav = "\t\t<div class='subnav'>{$subnavpath}</div>\n";
+	$doc = new DOMDocument();
+	$doc->loadHTML($content);
+	$links = $doc->getElementsByTagName('a');
+	$exlinks = array();
+	$inlinks = array();
+	foreach ($links as $link){
+		if ($link->getAttribute('class') === "external"){
+			array_push($exlinks, "<a class='external' href='" . str_replace("&", "&amp;", $link->getAttribute('href')) . "'>" . str_replace("_", " ", $link->getAttribute('id'))  . "</a>");
+		}
+		else {
+			array_push($inlinks, "<a href='" . str_replace("&", "&amp;", $link->getAttribute('href')) . "'>" . str_replace("_", " ", $link->getAttribute('id'))  . "</a>");
+		}	
+	}
+	$exlinks = implode(" | ", $exlinks);
+	$inlinks = implode(" | ", $inlinks);
+	$linksummary = "";
+	if ($inlinks !== "" || $exlinks !== ""){
+		$linksummary .= "\t\t<div class='linksummary'>\n";
+		if ($inlinks !== ""){
+			$linksummary .= "\t\t\tInternal Links: {$inlinks}<br />\n";
+		}
+		if ($exlinks !==""){
+			$linksummary .= "\t\t\tExternal Links: {$exlinks}\n";
+		}
+		$linksummary .= "\t\t</div>\n";
+	}
 	$display = "<!DOCTYPE html>\n"
 	. "<html>\n"
 	. "\t<head>\n"
@@ -78,10 +104,10 @@
 	. "\t\t\t<h1>{$title}</h1>\n"
 	. "\t\t\t<hr />\n"
 	. $content
-	. "\t\t\t<hr />\n"
-	. "\t\t\t<div>\n"
-	. "\t\t\t\tAll content is &copy; 2013 pokemonperfect.com. Pok&eacute;mon is &copy; 1995-2013 Nintendo\n"
-	. "\t\t\t</div>\n"
+	. "\t\t</div>\n"
+	. $linksummary
+	. "\t\t<div class='copyright'>\n"
+	. "\t\t\tAll content is &copy; 2013 pokemonperfect.com. Pok&eacute;mon is &copy; 1995-2013 Nintendo\n"
 	. "\t\t</div>\n"
 	. "\t\t<div class='footer'>\n"
 	. "\t\t\t<a href='http://php.net'><img src='http://pokemonperfect.com/php-power-white.png' alt='powered by php'></a>"
