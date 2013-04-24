@@ -1,6 +1,6 @@
 <?php
 function get_status($ip, $port) {
-	if (!$socket = @fsockopen($ip, $port, $errno, $errstr, 30)){
+	if (!$socket = @fsockopen($ip, $port, $errno, $errstr, 0.1)){
 		return "<div class='offline'>Offline</div>";
 	}
 	else {
@@ -9,7 +9,9 @@ function get_status($ip, $port) {
 	}
 }
 $title = "Pok&eacute;mon NetBattle Supremacy (NBS)";
-$content = "\t\t\t<table>"
+$content = "\t\t\t<p><a id='NetBattle_Supremacy_Site' class='external' href='http://nbsup.50webs.com/index.html'>Pok&eacute;mon NetBattle Supremacy</a> is a downloadable simulator that is the successor to Pok&eacute;mon NetBattle, debuting in February 2009, and adding support for the fourth generation &ndash; thus supporting the first four generations. The simulator was developed by Bayleef, with assistance from DJ Fury, Glaceon and Codabedago.</p>\n"
+. "\t\t\t<p> We have the latest version (1.1.1) for you to <a id='NBS_Installer' href='NBSInstall.exe'>download</a>.</p>\n"
+. "\t\t\t<table>"
 . "\t\t\t\t<tr>\n"
 . "\t\t\t\t\t<th>Name</th><th>Status</th>\n"
 . "\t\t\t\t</tr>\n"

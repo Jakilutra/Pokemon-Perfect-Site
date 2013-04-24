@@ -15,7 +15,7 @@ function get_details($dir) {
 			break;
 		}
 	}
-	if (!$socket = @fsockopen("127.0.0.1", $details["port"], $errno, $errstr, 30)){
+	if (!$socket = @fsockopen("127.0.0.1", $details["port"], $errno, $errstr, 0.1)){
 		$details["status"] = "<div class='offline'>Offline</div>";
 	}
 	else {

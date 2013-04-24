@@ -1,5 +1,5 @@
 <?php
-	$pages = array ("/" => "Home", "/ps/" => "PS", "/po/" => "PO", "/nbs/" => "NBS", "/sprites/" => "Sprites");
+	$pages = array ("/" => "Home", "/contributors.php" => "Contributors", "/ps/" => "PS", "/po/" => "PO", "/nbs/" => "NBS", "/generation_1/" => "Gen 1", "/sprites/" => "Sprites");
 	$currentpage = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 	$nav = "\t\t<div class='nav'>";
 	foreach ($pages as $page => $name){
@@ -11,7 +11,7 @@
 		}
 	}
 	$nav .= "<a class='external' href='/forums/'>Forum</a></div>\n";
-	$dirnames = array("po" => "Pokemon Online (PO)", "nbs" => "Pok&eacutemon NetBattle Supremacy (NBS)", "ps" => "Pokemon Showdown (PS)", "sprites" => "Sprites", "stadium" => "Stadium");
+	$dirnames = array("po" => "Pokemon Online (PO)", "nbs" => "Pok&eacutemon NetBattle Supremacy (NBS)", "ps" => "Pokemon Showdown (PS)", "sprites" => "Sprites", "stadium" => "Stadium", "generation_1" => "Gen 1", "tiers" => "Tiers", "stadium_ou" => "Stadium OU", "analyses" => "Analyses");
 	$dirs = explode("/", $currentpage);
 	if ($dirs[1] === ""){
 		$subnavpath = "<b>Pokemon Perfect</b>";

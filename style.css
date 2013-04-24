@@ -72,6 +72,9 @@ table {
 	border-collapse:collapse;
 	border: 3px solid black;
 }
+col {
+	width:16.6%;
+}
 th {
 	border: 2px solid black;
 }
@@ -83,6 +86,16 @@ h1 {
 	margin-top:0px;
 	text-align: center;
 	font-size: 25px;
+}
+h2 {
+	margin-top:0px;
+	font-size: 20px;
+	text-decoration:underline;
+}
+h3 {
+	margin-top:0px;
+	font-size: 18px;
+	text-decoration:underline;
 }
 a:link, a:visited{
 	color:blue;
@@ -107,4 +120,23 @@ a.external:hover, a.external:active {
 }
 iframe {
 	border: none;
+}
+.primary{
+	color:black;
+	font-weight:bold;
+}
+.secondary{
+	color:darkslategray;
+	font-weight:bold;
+}
+.tertiary{
+	color:dimgray;
+	font-weight:bold;
+}
+.quartary{
+	color:gray;
+	font-weight:bold;
+}
+.dashed{
+	border-bottom: 1px dashed #000; 
 }
