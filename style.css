@@ -140,3 +140,6 @@ iframe {
 .dashed{
 	border-bottom: 1px dashed #000; 
 }
+.js #fouc {
+	display: none;
+}

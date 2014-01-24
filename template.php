@@ -21,38 +21,38 @@
 	}
 	if (count($dirs) > 2){
 		if ($dirs[2] !== ""){
-			$subnavpath .= " -> " . "<a href='/" . $dirs[1] . "/'>" . $dirnames[strtolower($dirs[1])] . "</a>";
+			$subnavpath .= " &rarr; " . "<a href='/" . $dirs[1] . "/'>" . $dirnames[strtolower($dirs[1])] . "</a>";
 		}
 		else {
-			$subnavpath .= " -> " . "<b>" . $dirnames[strtolower($dirs[1])] . "</b>";
+			$subnavpath .= " &rarr; " . "<b>" . $dirnames[strtolower($dirs[1])] . "</b>";
 		}
 		if (count($dirs) > 3){
 			if ($dirs[3] !== ""){
-				$subnavpath .= " -> " . "<a href='/" . $dirs[1] . "/" . $dirs[2] . "/'>" . $dirnames[strtolower($dirs[2])] . "</a>";
+				$subnavpath .= " &rarr; " . "<a href='/" . $dirs[1] . "/" . $dirs[2] . "/'>" . $dirnames[strtolower($dirs[2])] . "</a>";
 			}
 			else {
-				$subnavpath .= " -> " . "<b>" . $dirnames[strtolower($dirs[2])] . "</b>";
+				$subnavpath .= " &rarr; " . "<b>" . $dirnames[strtolower($dirs[2])] . "</b>";
 			}
 			if (count($dirs) > 4){
 				if ($dirs[4] !== ""){
-					$subnavpath .= " -> " . "<a href='/" . $dirs[1] . "/" . $dirs[2] . "/" . $dirs[3] . "/'>" . $dirnames[strtolower($dirs[3])] . "</a>";
+					$subnavpath .= " &rarr; " . "<a href='/" . $dirs[1] . "/" . $dirs[2] . "/" . $dirs[3] . "/'>" . $dirnames[strtolower($dirs[3])] . "</a>";
 				}
 				else {
-					$subnavpath .= " -> " . "<b>" . $dirnames[strtolower($dirs[3])] . "</b>";
+					$subnavpath .= " &rarr; " . "<b>" . $dirnames[strtolower($dirs[3])] . "</b>";
 				}
 				if (count($dirs) > 5){
 					if ($dirs[5] !== ""){
-						$subnavpath .= " -> " . "<a href='/" . $dirs[1] . "/" . $dirs[2] . "/" . $dirs[3] . "/" . $dirs[4] . "/'>" . $dirnames[strtolower($dirs[4])] . "</a>";
+						$subnavpath .= " &rarr; " . "<a href='/" . $dirs[1] . "/" . $dirs[2] . "/" . $dirs[3] . "/" . $dirs[4] . "/'>" . $dirnames[strtolower($dirs[4])] . "</a>";
 					}
 					else {
-						$subnavpath .= " -> " . "<b>" . $dirnames[strtolower($dirs[4])] . "</b>";
+						$subnavpath .= " &rarr; " . "<b>" . $dirnames[strtolower($dirs[4])] . "</b>";
 					}
 				}
 			}
 		}
 	}
 	if ($dirs[count($dirs)-1] !== ""){
-		$subnavpath .=  " -> <b>{$title}</b>";
+		$subnavpath .=  " &rarr; <b>{$title}</b>";
 	}
 	$subnav = "\t\t<div class='subnav'>{$subnavpath}</div>\n";
 	$doc = new DOMDocument();
@@ -87,9 +87,13 @@
 	. "\t\t<meta charset='UTF-8'>\n"
 	. "\t\t<link href='/style.css' rel='stylesheet' type='text/css'>\n"
 	. "\t\t<title>{$title}</title>\n"
+	. "\t\t<script type ='text/javascript'>\n"
+	. "\t\t\t document.documentElement.className = 'js';\n"
+	. "\t\t</script>\n"
 	. "\t</head>\n"
 	. "\t<body>\n"
-	. "\t<div id='fb-root'></div>"
+	. "\t\t<div id='fouc'>\n"
+	. "\t\t<div id='fb-root'></div>"
 	. "<script>(function(d, s, id) {"
 	. "var js, fjs = d.getElementsByTagName(s)[0];"
 	. "if (d.getElementById(id)) return;"
@@ -107,7 +111,7 @@
 	. "\t\t</div>\n"
 	. $linksummary
 	. "\t\t<div class='copyright'>\n"
-	. "\t\t\tAll content is &copy; 2013 pokemonperfect.com. Pok&eacute;mon is &copy; 1995-2013 Nintendo\n"
+	. "\t\t\tAll content is &copy; 2013- pokemonperfect.com. Pok&eacute;mon is &copy; 1995- Nintendo\n"
 	. "\t\t</div>\n"
 	. "\t\t<div class='footer'>\n"
 	. "\t\t\t<a href='http://php.net'><img src='http://pokemonperfect.com/php-power-white.png' alt='powered by php'></a>"
@@ -119,6 +123,10 @@
 	. "\t\t\t<a href='http://www.youtube.com/user/PokemonPerfectStream?feature=creators_cornier-%2F%2Fs.ytimg.com%2Fyt%2Fimg%2Fcreators_corner%2FI_heart_YouTube%2F90x15_i_love_red.png'><img src='//s.ytimg.com/yt/img/creators_corner/I_heart_YouTube/90x15_i_love_red.png' alt='Subscribe to us on YouTube'/></a>\n"
 	. "\t\t\t<div class='fb-like' data-href='https://www.facebook.com/pages/Pokemonperfect/510730222321922' data-send='false' data-layout='button_count' data-width='450' data-show-faces='true'></div>\n"
 	. "\t\t</div>\n"
+	. "\t\t</div>\n"
+	. "\t\t<script type='text/javascript'>\n"
+	. "\t\t\t document.getElementById('fouc').style.display = 'block';\n"
+	. "\t\t</script>\n"
 	. "\t</body>\n"
 	. "</html>\n";
 ?>
